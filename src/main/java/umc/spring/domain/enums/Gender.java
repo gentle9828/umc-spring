@@ -1,16 +1,16 @@
 package umc.spring.domain.enums;
 
 public enum Gender {
-    MALE('M'),
-    FEMALE('F');
+    MALE("M"),
+    FEMALE("F");
 
-    private final char genderMark;
+    private final String genderMark;
 
-    Gender(char genderMark) {
+    Gender(String genderMark) {
         this.genderMark = genderMark;
     }
 
-    public char getGenderMark() {
+    public String getGenderMark() {
         return genderMark;
     }
 }
