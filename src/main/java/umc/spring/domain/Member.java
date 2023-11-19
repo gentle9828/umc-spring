@@ -4,6 +4,7 @@ import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 import javax.persistence.CascadeType;
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.EnumType;
 import javax.persistence.Enumerated;
@@ -33,10 +34,13 @@ public class Member extends BaseEntity {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
+    @Column(nullable = false, length = 20)
     private String name;
 
+    @Column(nullable = false, length = 50)
     private String address;
 
+    @Column(nullable = false, length = 50)
     private String specAddress;
 
     @Enumerated(EnumType.STRING)
@@ -50,6 +54,7 @@ public class Member extends BaseEntity {
 
     private LocalDate inactiveDate;
 
+    @Column(nullable = false, length = 50)
     private String email;
 
     private Integer point;
