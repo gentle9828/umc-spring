@@ -4,13 +4,13 @@ public enum Gender {
     MALE('M'),
     FEMALE('F');
 
-    private final char status;
+    private final char genderMark;
 
-    Gender(char status) {
-        this.status = status;
+    Gender(char genderMark) {
+        this.genderMark = genderMark;
     }
 
-    public char getStatus() {
-        return status;
+    public char getGenderMark() {
+        return genderMark;
     }
 }
