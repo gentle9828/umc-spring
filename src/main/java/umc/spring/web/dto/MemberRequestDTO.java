@@ -9,7 +9,7 @@ import lombok.Getter;
 public class MemberRequestDTO {
 
     @Getter
-    public static class joinDto {
+    public static class JoinDto {
 
         @NotBlank
         String name;
