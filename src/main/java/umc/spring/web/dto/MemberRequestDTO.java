@@ -5,6 +5,7 @@ import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 import lombok.Getter;
+import umc.spring.validation.annotaion.ExistCategories;
 
 public class MemberRequestDTO {
 
@@ -32,6 +33,7 @@ public class MemberRequestDTO {
         @Size(min = 5, max = 12)
         String specAddress;
 
+        @ExistCategories
         List<Long> preferCategory;
     }
 }
