@@ -6,8 +6,6 @@ import javax.validation.ConstraintValidatorContext;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Component;
 import umc.spring.apiPayload.code.status.ErrorStatus;
-import umc.spring.repository.FoodCategoryRepository;
-import umc.spring.service.FoodCategoryService.FoodCategoryService;
 import umc.spring.service.FoodCategoryService.FoodCategoryServiceImpl;
 import umc.spring.validation.annotaion.ExistCategories;
 
@@ -29,7 +27,7 @@ public class CategoriesExistValidator implements ConstraintValidator<ExistCatego
 
         if (!isValid) {
             context.disableDefaultConstraintViolation();
-            context.buildConstraintViolationWithTemplate(ErrorStatus.FOOD_CATEGORY_NOT_FOUND.toString()).addConstraintViolation();
+            context.buildConstraintViolationWithTemplate(ErrorStatus.REGION_NOT_FOUND.toString()).addConstraintViolation();
         }
 
         return isValid;
