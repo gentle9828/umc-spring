@@ -6,26 +6,28 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Component;
 import umc.spring.apiPayload.code.status.ErrorStatus;
 import umc.spring.service.RegionService.RegionServiceImpl;
+import umc.spring.service.StoreService.StoreServiceImpl;
 import umc.spring.validation.annotaion.ExistRegion;
+import umc.spring.validation.annotaion.ExistStore;
 
 @Component
 @RequiredArgsConstructor
-public class RegionExistValidator implements ConstraintValidator<ExistRegion, Long> {
+public class StoreExistValidator implements ConstraintValidator<ExistStore, Long> {
 
-    private final RegionServiceImpl regionService;
+    private final StoreServiceImpl storeService;
 
     @Override
-    public void initialize(ExistRegion constraintAnnotation) {
+    public void initialize(ExistStore constraintAnnotation) {
         ConstraintValidator.super.initialize(constraintAnnotation);
     }
 
     @Override
     public boolean isValid(Long value, ConstraintValidatorContext context) {
-        boolean isValid = regionService.existsById(value);
+        boolean isValid = storeService.existsById(value);
 
         if (!isValid) {
             context.disableDefaultConstraintViolation();
-            context.buildConstraintViolationWithTemplate(ErrorStatus.REGION_NOT_FOUND.toString()).addConstraintViolation();
+            context.buildConstraintViolationWithTemplate(ErrorStatus.STORE_NOT_FOUND.toString()).addConstraintViolation();
         }
 
         return isValid;

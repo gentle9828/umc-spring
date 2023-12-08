@@ -1,5 +1,6 @@
 package umc.spring.service.RegionService;
 
+import java.util.Optional;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -26,4 +27,5 @@ public class RegionServiceImpl implements RegionService {
     public boolean existsById(Long id) {
         return regionRepository.existsById(id);
     }
+
 }
